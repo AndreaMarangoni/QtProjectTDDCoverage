@@ -36,8 +36,8 @@
 *.info
 
 # Directories
-*_lcov_dir
 stage/
+*_html_lcov
 
 # Qt Files
 *.pro.user

@@ -1,0 +1,13 @@
+
+#!/bin/bash
+
+# Process lcov files generated from compilation
+lcov -t $1 -o $1_test.info -c -d stage/debug/.
+
+# Generate coverage html files into directory specified ( arg_html_lcov )
+genhtml -o $1_html_lcov $1_test.info
+
+
+
+
+
