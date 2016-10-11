@@ -1,0 +1,11 @@
+
+#!/bin/bash
+
+lcov -t $1 -o $1_test.info -c -d stage/debug/.
+genhtml -o $1_dir $1_test.info
+#google-chrome $1_dir/index.html
+
+
+
+
+
