@@ -1,13 +1,24 @@
 
 #!/bin/bash
 
+STAGE_DIR=stage/debug
+ARG="$1"
+
+if [ $# -eq 0 ]
+  then
+    ARG=Coverage
+fi
+
+INFO="$ARG"_test.info
+LCOV_DIR="$ARG"_html_lcov
+
 # Process lcov files generated from compilation
-lcov -t $1 -o $1_test.info -c -d stage/debug/.
+
+lcov -t "$ARG" -o "$INFO" -c -d "$STAGE_DIR"/.
 
 # Generate coverage html files into directory specified ( arg_html_lcov )
-genhtml -o $1_html_lcov $1_test.info
+genhtml -o "$LCOV_DIR"  "$INFO"
 
+URL=$(pwd)/"$LCOV_DIR"/index.html
 
-
-
-
+echo "<html><head><meta http-equiv=\"refresh\" content=\"0; url=$URL \" /></head></body></html>" >> index.html
