@@ -35,9 +35,21 @@ which(ccache) {
 
 which(lcov) {
     !build_pass:message("Using lcov")
-    QMAKE_LDFLAGS += --coverage
-    QMAKE_CXXFLAGS += --coverage
 
-    LIBS += \
-            -lgcov
+    unix {
+
+        QMAKE_LDFLAGS += --coverage
+        QMAKE_CXXFLAGS += --coverage
+
+        LIBS += \
+                -lgcov
+    }
+    else:macx {
+
+        LDFLAGS=-lprofile_rt
+
+        QMAKE_LDFLAGS += -fprofile-arcs -ftest-coverage
+        QMAKE_CXXFLAGS += -fprofile-arcs -ftest-coverage
+
+    }
 }
