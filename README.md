@@ -18,10 +18,10 @@ After cloning the project you will have just to:
         On linux : use your distribution's package manager 
         On Mac : use Homebrew
         
-    For linux users (and maybe Mac):
+    For linux users :
     7. Run ./coverage on the root directory of the project.
         The script will create an index.html which you can open with preferred browser
-    
+    For Mac users I will provide a configuration.
     For windows I don't know if lcov exists.
     
     If you are using **ccache** you don't need to do anything because the .pro file will
