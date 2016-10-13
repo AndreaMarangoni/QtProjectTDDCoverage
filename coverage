@@ -15,6 +15,9 @@ LCOV_DIR="$ARG"_html_lcov
 # Process lcov files generated from compilation
 
 lcov -t "$ARG" -o "$INFO" -c -d "$STAGE_DIR"/.
+lcov -r "$INFO" "*.h" -o "$INFO"
+lcov -r "$INFO" "moc_*" -o "$INFO"
+lcov -r "$INFO" "ui_*" -o "$INFO"
 
 # Generate coverage html files into directory specified ( arg_html_lcov )
 genhtml -o "$LCOV_DIR"  "$INFO"
