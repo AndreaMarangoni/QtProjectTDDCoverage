@@ -24,4 +24,4 @@ genhtml -o "$LCOV_DIR"  "$INFO"
 
 URL=$(pwd)/"$LCOV_DIR"/index.html
 
-echo "<html><head><meta http-equiv=\"refresh\" content=\"0; url=$URL \" /></head></body></html>" >> index.html
+echo "<html><head><meta http-equiv=\"refresh\" content=\"0; url=$URL \" /></head></body></html>" > index.html
