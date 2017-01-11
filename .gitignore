@@ -34,6 +34,8 @@
 
 # lcov Files
 *.info
+*.gcda
+*.gcno
 
 # Directories
 stage/
@@ -41,5 +43,5 @@ stage/
 
 # Qt Files
 *.pro.user
-
+*.stash
 

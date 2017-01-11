@@ -45,11 +45,12 @@ which(lcov) {
                 -lgcov
     }
     else:macx {
-
-        LDFLAGS=-lprofile_rt
-
         QMAKE_LDFLAGS += -fprofile-arcs -ftest-coverage
         QMAKE_CXXFLAGS += -fprofile-arcs -ftest-coverage
-
+        
+        # the path is very user specific!!!
+        LIBS += \
+        -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/6.1.0/lib/darwin \
+        -lclang_rt.profile_osx 
     }
 }
