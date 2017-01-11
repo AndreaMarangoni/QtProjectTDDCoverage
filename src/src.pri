@@ -2,6 +2,6 @@
 HEADERS  += \
 
 SOURCES += \
-    $$PWD/src/main.cpp \
+    $$PWD/main.cpp \
 
 FORMS += \

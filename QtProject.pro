@@ -4,7 +4,7 @@ TARGET = QtProjectTarget
 
 TEMPLATE = app
 
-include(src.pri)
+include(src/src.pri)
 
 test {
     message(Test build)
@@ -12,7 +12,7 @@ test {
     QT += testlib
     TARGET = UnitTests
 
-    include(tests.pri)
+    include(tests/tests.pri)
 
 } else {
     message(Normal build)
